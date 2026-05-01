@@ -1,24 +1,32 @@
 # Simple Bank API Demo
 
-This project demonstrates a basic API integration flow using JSON request and response.
+This project demonstrates a basic API integration flow where a client sends a JSON request to an API and receives a JSON response.
+
+---
 
 ## Overview
 
-The API receives an accountId from the client, validates the request, retrieves account data, and returns a JSON response.
+This demo simulates how a client application interacts with a backend API.
 
-This project was created to understand API integration concepts such as:
-- JSON request and response
-- Input validation
-- HTTP status codes
-- Basic data mapping
+Flow:
+
+Client → JSON request → API → validation → data retrieval → JSON response
+
+---
 
 ## API Endpoint
 
-POST /api/account/balance
+**POST** `/api/account/balance`
 
-## Sample Request
+---
 
-```json
-{
-  "accountId": "A1001"
-}
+## Client Usage
+
+A client sends a JSON request to the API.
+
+### Example Request
+
+```bash
+curl -X POST http://localhost:5000/api/account/balance \
+-H "Content-Type: application/json" \
+-d '{"accountId":"A1001"}'
